@@ -12,5 +12,6 @@ console.log(answer)
 // Run the code here and look at the results
 // Does it look right? 
 // What went wrong?
+// .toFixed is converting price into a string and price + tax is just adding strings.
 
 
