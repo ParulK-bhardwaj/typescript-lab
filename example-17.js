@@ -1,19 +1,18 @@
+"use strict";
 // Giant Robot class
-// Goal creat an interface with a methods 
-// All Robots have name, power and type. 
-// Kaiju should have a describe method that 
-// prints: name:<name> type:<type> power:<power>
-// Timer with count
-// Goal creat a function that takes another function as an argument
-function setTimeoutCount(callback, time, count) {
-    var timer = setTimeout(function () {
-        count -= 1;
-        callback();
-        if (count === 0) {
-            clearTimeout(timer);
-        }
-    }, time);
-}
-setTimeoutCount(function () {
-    console.log('???');
-}, 1000, 3);
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Robot = void 0;
+var Robot = /** @class */ (function () {
+    function Robot(name, type, power) {
+        this.name = name;
+        this.type = type;
+        this.power = power;
+    }
+    Robot.prototype.describe = function () {
+        console.log("name: ".concat(this.name, " type: ").concat(this.type, " power: ").concat(this.power));
+    };
+    return Robot;
+}());
+exports.Robot = Robot;
+var robot = new Robot("GROOT", "I AM GROOT", 60);
+robot.describe();

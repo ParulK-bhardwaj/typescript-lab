@@ -5,15 +5,18 @@
 
 // This function takes a callback that receives a string. 
 
-function callYouLater(callback, time) {
+function callYouLater(callback: (messge: string) => void, time: number) {
 	setTimeout(() => {
 	  callback('What it be like?')
 	}, time)
 }
 
+type CallMeMaybeResults = {
+	success: boolean, 
+	probability: number
+}
 
-
-function callMeMaybe(callback, probability) {
+function callMeMaybe(callback: (results: CallMeMaybeResults) => void, probability: number) {
 	setTimeout(() => {
 		if (Math.random() * 100 < probability) {
 		  return callback({ success: true, probability })
